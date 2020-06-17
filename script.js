@@ -33,13 +33,18 @@ const addNweLink = () => {
   const linkAuthor = prompt("Enter here your link Author");
   const linkUrl = prompt("Enter here your link url");
   let news = {
-    title: linkTitle ,
+    title: linkTitle,
     author : linkAuthor,
     url : linkUrl
   };
-  if (url.startsWith !== '"http' && url.endsWith !== '://') {
-      news.url.push(`"http://" ${linkUrl}`)
-  };
+  if (news.url.startsWith('"http') == false && news.url.endsWith('://') == false) {
+    news = {
+      title: linkTitle,
+      author : linkAuthor,
+      url : (`"http:// ${linkUrl}"`)
+    }
+};
+
   links.push(news)
   return;
 }
