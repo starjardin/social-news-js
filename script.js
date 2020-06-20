@@ -2,17 +2,17 @@
 const links = [
   {
     title: "Madagascar news",
-    url: `"htpp://news-madagascar.com"`,
+    url: `"http://news-madagascar.com"`,
     author: "HoneyMoon",
   },
   {
     title: "African news",
-    url: `"htpp://news-african.com"`,
+    url: `"http://news-african.com"`,
     author: "HoneyMoon",
   },
   {
     title: "American news",
-    url: `"htpp://news-american.com"`,
+    url: `"http://news-american.com"`,
     author: "HoneyMoon",
   },
 ];
@@ -37,7 +37,7 @@ const addNweLink = () => {
     author : linkAuthor,
     url : linkUrl
   };
-  if (news.url.startsWith('"http') == false && news.url.endsWith('://') == false) {
+  if (news.url.startsWith('http') == false && news.url.endsWith('://') == false) {
     news = {
       title: linkTitle,
       author : linkAuthor,
@@ -63,7 +63,7 @@ const startMenuString = `Choose an option:
 
 let menuStart = Number(prompt(startMenuString));
 //while loop to allow the user to read or enter new news.
-while(menuStart !== 0) {
+while(menuStart !== 0 && menuStart !== "") {
   //if the user enter "1" it will display the existing news(we are calling function here)
   if (menuStart === 1) {
     linkList();
